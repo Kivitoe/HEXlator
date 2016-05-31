@@ -1,0 +1,6 @@
+{
+  "name": "Hexlator",
+  "tagline": "A simple and light-weight hexadecimal color finder.",
+  "body": "## Why would I want to use HEXlator?\r\n### Simplicity\r\nHEXlator is one of the easiest and quickest ways to find a hex code. It has a very\r\nclean, simple, and appealing UI. HEXlator even offers a tutorial in Main Menu > More Options.  \r\n\r\n### Cross-Platform\r\nBeing written in pure Java Swing, HEXlator is Cross-Platform. This means that you can run it on Windows, OS X, Linux, Solaris, and more! All you need to run it is to have Java installed on your system.\r\n\r\n### Free\r\nHEXlator is free to use and contribute to with a GNU license. No money, membership, or credit card number needed to download.\r\n\r\n## Screenshots\r\n![imgur](http://i.imgur.com/b9PGsHz.jpg)\r\n![imgur](http://i.imgur.com/Cga2teL.jpg)\r\n![imgur](http://i.imgur.com/NDG1sst.jpg)\r\n\r\n\r\n## Mobile App\r\nThere is currently a HEXlator Android app in development to find Hex codes on the go.",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
