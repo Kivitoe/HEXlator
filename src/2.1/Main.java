@@ -21,10 +21,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 import java.awt.Toolkit;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.Cursor;
 
 public class Main {
 
-	private JFrame frmHexlator;
+	public static JFrame frmHexlator;
 
 	/**
 	 * Launch the application.
@@ -89,18 +92,40 @@ public class Main {
 		lblNewLabel.setIcon(new ImageIcon(Main.class.getResource("/imgs/color_picker.png")));
 		lblNewLabel.setForeground(Color.DARK_GRAY);
 		lblNewLabel.setFont(new Font("Euphemia", Font.BOLD, 39));
+		
+		JLabel lblMoreOptions = new JLabel("More Options...");
+		lblMoreOptions.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		lblMoreOptions.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				lblMoreOptions.setText("<html><U>More Options...</U></html>");
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblMoreOptions.setText("More Options...");
+			}
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				mo.main(null);
+			}
+		});
+		lblMoreOptions.setForeground(Color.BLUE);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
+			gl_panel.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addGap(10)
 					.addComponent(separator, GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
 					.addContainerGap())
 				.addComponent(btnFindColorBy, GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addGap(105)
+					.addContainerGap(421, Short.MAX_VALUE)
+					.addComponent(lblMoreOptions, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+					.addGap(106)
 					.addComponent(lblNewLabel)
-					.addContainerGap(106, Short.MAX_VALUE))
+					.addContainerGap(105, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.TRAILING)
@@ -110,7 +135,9 @@ public class Main {
 					.addComponent(separator, GroupLayout.PREFERRED_SIZE, 2, GroupLayout.PREFERRED_SIZE)
 					.addGap(120)
 					.addComponent(lblNewLabel)
-					.addGap(189))
+					.addGap(75)
+					.addComponent(lblMoreOptions)
+					.addGap(100))
 		);
 		panel.setLayout(gl_panel);
 	}
